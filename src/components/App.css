@@ -1,0 +1,22 @@
+.App {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: blue; */
+  height: 100vh;
+  background-image: linear-gradient( 99deg,  rgba(115,18,81,1) 10.6%, rgba(28,28,28,1) 118% );
+}
+
+.tasksContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.tasksContainer::-webkit-scrollbar{
+  display: none;
+}
