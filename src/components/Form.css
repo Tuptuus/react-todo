@@ -1,4 +1,4 @@
-input{
+input {
   width: 40vw;
   height: 4vh;
   margin-top: 50px;
@@ -12,7 +12,7 @@ input{
   padding-left: 40px;
 }
 
-button{
+button {
   margin-left: 15px;
   width: 12vw;
   height: 5vh;

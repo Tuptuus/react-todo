@@ -1,4 +1,4 @@
-.task{
+.task {
   width: 90%;
   height: 6%;
   border: 2px solid white;
@@ -10,27 +10,27 @@
   margin-top: 20px;
 }
 
-.content{
+.content {
   width: 85%;
   padding-left: 20px;
   border-right: 2px solid white;
   color: white;
 }
 
-.buttons{
+.buttons {
   display: flex;
   flex-direction: row;
   user-select: none;
 }
 
-.buttons>div{
+.buttons > div {
   font-size: 40px;
   margin-left: 10px;
   cursor: pointer;
   color: white;
 }
 
-.done{
+.done {
   text-decoration: line-through;
   color: lightslategrey;
   border-color: lightslategray;
