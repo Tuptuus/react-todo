@@ -8,7 +8,7 @@ const Edit = <FontAwesomeIcon icon={faEdit}/>
 const Check = <FontAwesomeIcon icon={faCheck}/>
 
 const Task = (props) => {
-  const element = props.tasks.map(item=><div className={props.nowChecked===item.id ? "task done" : "task"} key={item.id}>
+  const element = props.tasks.map(item=><div className={props.isChecked && props.nowChecked===item.id ? "task done" : "task"} key={item.id}>
     <div className="content">
       {item.task}
     </div>

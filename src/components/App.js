@@ -8,6 +8,9 @@ export default class App extends Component {
     inputValue: "",
     isEditing: false,
     nowEditing: null,
+    nowEditingIndex: null,
+    isChecked: false,
+    nowChecked: null,
     tasks:[
       {
         id: 1,
@@ -41,6 +44,24 @@ export default class App extends Component {
     }
   }
 
+  handleEditTask = (e) =>{
+    e.preventDefault()
+    const tasks = [...this.state.tasks]
+    tasks[this.state.nowEditingIndex].task = this.state.nowEditing
+    this.setState(prevState=>({
+      nowEditing: "",
+      isEditing: false,
+      nowEditingIndex: null,
+      tasks: tasks,
+    }))
+  }
+
+  handleInputEditValue = (e) =>{
+    this.setState({
+      nowEditing: e.target.value
+    })
+  }
+
   handleInputValue = (e) =>{
     this.setState({
       inputValue: e.target.value
@@ -59,10 +80,12 @@ export default class App extends Component {
       this.setState({
         nowEditing: tasks[index].task,
         isEditing: true,
+        nowEditingIndex: index,
       })
     }else if(type === "check"){
       this.setState({
         nowChecked: id,
+        isChecked: !this.state.isChecked,
       })
     }
   }
@@ -73,14 +96,17 @@ export default class App extends Component {
           <Form
             isEditing={this.state.isEditing}
             nowEditing={this.state.nowEditing}
-            handleInput={this.handleInputValue} 
+            handleInputEdit={this.handleInputEditValue} 
+            handleInput={this.handleInputValue}
             value={this.state.inputValue} 
             click={this.handleButtonAddTask}
+            edit={this.handleEditTask}
           />
         </div>
         <div className="tasksContainer">
-          <Task 
-            nowChecked={this.state.nowChecked} 
+          <Task
+            nowChecked={this.state.nowChecked}
+            isChecked={this.state.isChecked} 
             handleButtons={this.handleButtons} 
             tasks={this.state.tasks}
           />
