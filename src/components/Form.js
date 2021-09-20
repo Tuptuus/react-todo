@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 import "./Form.css";
 
+// const handleFocus = (e) => {
+//   e.preventDefault();
+//   inputRef.current.focus();
+// };
 const Form = (props) => {
-  function handleFocus(e) {
-    e.preventDefault();
-    inputRef.current.focus();
-  }
   const inputRef = useRef();
   return (
     <form>
@@ -31,7 +31,7 @@ const Form = (props) => {
       ) : (
         <button onClick={props.click}>NEW TASK</button>
       )}
-      <button onClick={handleFocus}>Focus</button>
+      {/* <button onClick={handleFocus}>Focus</button> */}
     </form>
   );
 };

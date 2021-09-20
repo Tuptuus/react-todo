@@ -30,6 +30,10 @@
   color: white;
 }
 
+.buttons > div[disabled] {
+  pointer-events: none;
+}
+
 .done {
   text-decoration: line-through;
   color: lightslategrey;

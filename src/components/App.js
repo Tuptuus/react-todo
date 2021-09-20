@@ -11,6 +11,7 @@ export default class App extends Component {
     nowEditingIndex: null,
     isChecked: false,
     nowChecked: null,
+    disableDelete: false,
     tasks: [],
   };
 
@@ -46,6 +47,7 @@ export default class App extends Component {
       nowEditing: "",
       isEditing: false,
       nowEditingIndex: null,
+      disableDelete: false,
       tasks: tasks,
     }));
   };
@@ -75,6 +77,7 @@ export default class App extends Component {
         nowEditing: tasks[index].task,
         isEditing: true,
         nowEditingIndex: index,
+        disableDelete: true,
       });
     } else if (type === "check") {
       this.setState({
@@ -101,6 +104,7 @@ export default class App extends Component {
         </div>
         <div className="tasksContainer">
           <Task
+            disable={this.state.disableDelete}
             nowChecked={this.state.nowChecked}
             isChecked={this.state.isChecked}
             handleButtons={this.handleButtons}

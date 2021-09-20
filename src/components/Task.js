@@ -17,7 +17,10 @@ const Task = (props) => {
     >
       <div className="content">{item.task}</div>
       <div className="buttons">
-        <div onClick={props.handleButtons.bind(this, "delete", item.id)}>
+        <div
+          disabled={props.disable}
+          onClick={props.handleButtons.bind(this, "delete", item.id)}
+        >
           {Trash}
         </div>
         <div onClick={props.handleButtons.bind(this, "edit", item.id)}>
@@ -27,6 +30,7 @@ const Task = (props) => {
           {Check}
         </div>
       </div>
+      {/* <button onClick={Form()}>elo</button> */}
     </div>
   ));
   return <>{element}</>;
